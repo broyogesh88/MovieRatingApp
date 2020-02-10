@@ -1,0 +1,25 @@
+<% if !user_signed_in? %>
+<div class="jumbotron">
+  <h1><b>Movie Critics<b></h1>
+  <p><i>Whether a movie is a rotten tomato or a brilliant work of art, if people are watching it, it's worth critiquing. A decent movie review should entertain, persuade and inform, providing an original opinion without giving away too much of the plot. A great movie review can be a work of art in its own right. Read on to learn how to analyze a movie, come up with an interesting thesis and write a review as entertaining as your source material.<i></p>
+  <p><%= link_to "Sign Up To Write A Review", new_user_registration_path, class:"btn btn-primary btn-lg" %></p>
+</div>
+<% end %>
+<div style="margin-left: 80%;">
+  <% if user_signed_in? %>
+    <% if @user.email == "broyogesh88@gmail.com" %>
+     <%= link_to "Add New Movie", new_movie_path, class: "btn btn-info",style: "color: white", onMouseOver: "this.style.color='blue'", onMouseOut: "this.style.color='white'" %>
+  <% end %>
+  <% end %>
+  </div>
+  <br>
+<div class="row">
+  <% @movies.each do |movie| %> 
+    <div class="col-sm-6 col-md-3">  
+      <div class="thumbnail">
+        <%= link_to (image_tag movie.image.url(:medium, :size => "300x500"),class: 'image' ), movie %>
+      </div>
+    </div>
+
+  <% end %>
+</div> 

@@ -1,0 +1,65 @@
+<%= form_with(model: movie, local: true, html: { multipart: true }) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div  style="background-color: #030b33; color: white; padding-left: 5%; width: 40%; margin-left: 30%; border-radius: 8px;">
+    <br>
+  <div class="field">
+    <%= form.label :title %><br>
+    <%= form.text_field :title , class: "abc" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %><br>
+    <%= form.text_area :description, class: "abc" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movie_length %><br>
+    <%= form.text_field :movie_length, class: "abc" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :director %><br>
+    <%= form.text_field :director, class: "abc" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cast %><br>
+    <%= form.text_area :cast, class: "abc" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %><br>
+    <%= form.text_field :rating, class: "abc" %>
+  </div>
+
+  <div class="field"><br>
+    <%= form.label :image %>
+    <%= form.file_field :image %>
+  </div>
+
+   <div class="field"><br>
+    <%= form.label :video %>
+    <%= form.file_field :video, class: "form-control" %>
+  </div>
+
+  <div class="actions"><br>
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %><br>
+<br>
+</div>
+<br>
+<div style="margin-left: 48%;">
+<%= link_to 'Back', movies_path, class: "btn btn-success" %><div><br>
+<br><br>

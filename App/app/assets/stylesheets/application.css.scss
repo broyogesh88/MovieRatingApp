@@ -1,0 +1,32 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body
+{
+	background: url(2.jpg);	
+}
+
+.review_title
+{
+	margin: 0 0 20px 0;
+}
+
+.reviews
+{
+	padding: 15px 0;
+	border-bottom: 1px solid #EAEAEA;
+	.star-rating
+	{
+		padding-bottom: 8px;
+	}
+}
+.abc
+{
+	color: black;
+}
+
+.image
+{
+  max-width: 500px;
+  max-height: 360px;
+}

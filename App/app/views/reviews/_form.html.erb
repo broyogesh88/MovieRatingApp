@@ -1,0 +1,49 @@
+<%= simple_form_for([@movie, @review]) do |form| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div  style="background-color: #030b33; color: white; padding-left: 5%; width: 40%; margin-left: 30%; border-radius: 8px;">
+  <br>
+  <h1>New Review</h1>
+<br>
+
+  <div class="field">
+    <%= form.label :name %><br>
+    <%= form.text_field :name, class: "abc" %>
+  </div>
+  <br>
+    <%= form.label :rating %>
+    <div class="field">
+     <div id="star-rating">
+    </div>
+    <br>
+  </div>
+  <div class="field">
+    <%= form.label :comment %><br>
+    <%= form.text_area :comment, class: "abc" %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+    <% end %>
+    <br><br>
+    <%= link_to 'Back', movie_path(@movie), style: "margin-left: 35%", class: "btn btn-success" %>
+    <br><br>
+</div>
+
+
+<script>
+  $('#star-rating').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>
