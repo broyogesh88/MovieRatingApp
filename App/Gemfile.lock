@@ -304,7 +304,7 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
-    jmespath (1.4.0)
+    jmespath (1.6.1)
     jquery (0.0.1)
     jquery-rails (4.3.5)
       rails-dom-testing (>= 1, < 3)
